@@ -1,0 +1,42 @@
+.navigate{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    width: 1100px;
+    height: 90px;
+    border: 1px solid red;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+    
+}
+/* .navigate>Link:nth-child(1){
+    margin-right: 0px;
+    color: black;
+    
+} */
+.a{
+    width:1px;
+
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    gap: 200px;
+    
+
+}
+.main>div+div{
+    display: flex;
+    justify-content:space-evenly;
+    border:1px solid red;
+    width:400px;
+    margin-top: 20px;
+
+    
+}
+.hover{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
