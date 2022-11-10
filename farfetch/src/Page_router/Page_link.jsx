@@ -5,7 +5,10 @@ import style from "./link.css";
 import {
   Menu,
   Image,
+  Radio,
   Button,
+  RadioGroup,
+  Stack,
   MenuButton,
   MenuList,
   MenuOptionGroup,
@@ -29,30 +32,42 @@ import {
   MenuItemOption,
   TabPanels,
   TabPanel,
+  textDecoration,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import Category from "./category";
+import Login from "./login";
 
 function PageLink() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [bord, setBord] = useState(true);
+  const [scrollBehavior, setScrollBehavior] = useState("inside");
+  const [magic, setMagic] = useState(true);
+
+  const magicset = () => {
+    setMagic(false);
+    setTimeout(() => {
+      setMagic(true);
+    }, 3000);
+  };
+  console.log("mGI", magic);
 
   const initialRef = useRef(null);
   const finalRef = useRef(null);
-  console.log(bord);
+  // console.log(bord);
 
-  const bordChange = () => {
-    setBord(false);
-  };
-  const bordChange1 = () => {
-    setBord(true);
-  };
+  // const bordChange = () => {
+  //   setBord(false);
+  // };
+  // const bordChange1 = () => {
+  //   setBord(true);
+  // };
 
   return (
     <div>
       <div className="main">
-        {/* Side 1 */}
-        {/* side 1 */}
+        {/* women,mens,kids */}
+
         <div className="navigate">
           <Link className="a" to="/">
             <h3>Womens</h3>
@@ -60,13 +75,27 @@ function PageLink() {
           <Link className="a" to="/Mens">
             <h3>Mens</h3>
           </Link>
-          <Link to="/Kids">
+          <Link
+            style={{
+              marginLeft: "-30px",
+              textDecoration: "none",
+              color: "#222222",
+            }}
+            to="/Kids"
+          >
             <h3>Kids</h3>
           </Link>
-          <Link to="/Logo">
-            <h1>FARFETCH</h1>
+          <Link to="/Logo" style={{ textDecoration: "none" }}>
+            <h1 style={{ fill: "#222", color: "black", fontSize: "1.9rem" }}>
+              FARFETCH
+            </h1>
           </Link>
         </div>
+
+        {/* flag,login,like cart   */}
+
+        {/* falg */}
+
         <div>
           <Link to="/">
             <Menu closeOnSelect={false}>
@@ -75,10 +104,12 @@ function PageLink() {
                 colorScheme="blue"
                 border="none"
                 mt="15"
-                borderRadius="50%"
+                borderRadius="10%"
+                // border="1px solid red"
+                onClick={magicset}
               >
                 <Image
-                  src="data:image/jpeg;base64,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"
+                  src="data:image/png;base64,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"
                   alt="flag"
                   w={30}
                 />
@@ -87,18 +118,21 @@ function PageLink() {
                 minWidth="240px"
                 border="1px solid red"
                 w="350px"
-                h="400px"
+                h="500px"
                 bg="#FFFFFF"
+                color="black"
               >
                 <MenuOptionGroup
                   defaultValue="asc"
                   title="DELIVERY DESTINATION OR REGION"
                   type="radio"
+                  color="#222"
                 >
                   <MenuOptionGroup
                     defaultValue="asc"
                     title="You are currently shipping to India and your order will be billed in USD $."
                     type="radio"
+                    color="black"
                   >
                     <InputGroup>
                       <Input
@@ -116,164 +150,110 @@ function PageLink() {
                     </InputGroup>
                     <MenuItemOption
                       mt="20px"
+                      ml="20px"
                       mb="20px"
+                      w="290px"
+                      h="45px"
                       bg="white"
                       border="none"
                       value="india"
+                      borderBottom="1px solid #A0AEC0
+                      "
+                      fontSize="17px"
                     >
                       India
                     </MenuItemOption>
                     <MenuItemOption
                       borderTop="1px solid red"
                       mt="20px"
+                      ml="20px"
+                      mb="20px"
+                      w="290px"
+                      h="25px"
                       bg="white"
                       border="none"
                       value="india"
+                      fontSize="17px"
                     >
-                      India
+                      Andorra
                     </MenuItemOption>
                     <MenuItemOption
                       mt="20px"
+                      ml="20px"
+                      mb="20px"
+                      w="290px"
+                      h="25px"
                       bg="white"
                       border="none"
                       value="india"
+                      fontSize="17px"
                     >
-                      africa
+                      U.A.E
                     </MenuItemOption>
                     <MenuItemOption
                       mt="20px"
+                      ml="20px"
+                      mb="20px"
+                      w="290px"
+                      h="25px"
                       bg="white"
                       border="none"
                       value="india"
+                      fontSize="17px"
                     >
-                      India
+                      الإمارات العربية المتحدة
                     </MenuItemOption>
                     <MenuItemOption
                       mt="20px"
+                      ml="20px"
+                      mb="20px"
+                      w="290px"
+                      h="25px"
                       bg="white"
                       border="none"
                       value="india"
+                      fontSize="17px"
                     >
-                      India
+                      Afganistana
                     </MenuItemOption>
                     <MenuItemOption
                       mt="20px"
+                      ml="20px"
+                      mb="20px"
+                      w="290px"
+                      h="25px"
                       bg="white"
                       border="none"
                       value="india"
+                      fontSize="17px"
                     >
-                      India
+                      Antigua and Barbuda
+                    </MenuItemOption>
+                    <MenuItemOption
+                      mt="20px"
+                      ml="20px"
+                      mb="20px"
+                      w="290px"
+                      h="25px"
+                      bg="white"
+                      border="none"
+                      value="india"
+                      fontSize="17px"
+                    >
+                      Anguilla
                     </MenuItemOption>
                   </MenuOptionGroup>
                 </MenuOptionGroup>
               </MenuList>
             </Menu>
           </Link>
-          <Link to="/">
-            <Button onClick={onOpen} border="none" borderRadius="50%" mt="10px">
-              <Avatar bg="teal.500" w="30px" h="40px" border="none" />
-            </Button>
 
-            <Modal
-              initialFocusRef={initialRef}
-              finalFocusRef={finalRef}
-              isOpen={isOpen}
-              onClose={onClose}
-            >
-              <ModalOverlay />
-              <ModalContent
-                w="400px"
-                h="600px"
-                border="1px solid red"
-                m="auto"
-                mt="100px"
-                bg="#FFFFFF"
-              >
-                <ModalHeader>Come on in</ModalHeader>
-                <ModalCloseButton
-                  w="40px"
-                  ml="350px"
-                  mt="-10px"
-                  border="none"
-                  bg="#FFFFFF"
-                />
+          {/* login */}
+          <Login/>
+          
 
-                <ModalBody pb={6}>
-                  <Tabs>
-                    <TabList borderBottom="1px solid red" width="80%" ml="10px">
-                      <Tab
-                        bg="#FFFFFF"
-                        border="none"
-                        onClick={bordChange1}
-                        borderBottom={bord ? "2px solid red" : "none"}
-                      >
-                        SIGN IN
-                      </Tab>
+          {/* like,heart */}
 
-                      <Tab
-                        bg="#FFFFFF"
-                        border="none"
-                        onClick={bordChange}
-                        borderBottom={!bord ? "2px solid red" : "none"}
-                      >
-                        I'M NEW HERE
-                      </Tab>
-                    </TabList>
-
-                    <TabPanels>
-                      <TabPanel>
-                        <FormControl>
-                          <FormLabel ml="20px">Email Address</FormLabel>
-                          <Input
-                            ml="20px"
-                            h="30px"
-                            w="80%"
-                            ref={initialRef}
-                            placeholder="First name"
-                          />
-                        </FormControl>
-                        <FormControl mt={4}>
-                          <FormLabel ml="20px">Password</FormLabel>
-                          <Input
-                            h="30px"
-                            m="auto"
-                            w="80%"
-                            ml="20px"
-                            placeholder="Last name"
-                          />
-                        </FormControl>
-                        <FormControl mt={4}>
-                          <Link to="/">Forgot Password</Link>
-                        </FormControl>
-                        <Button h="30px" w="83%" ml="20px" mt={10}>
-                          SIGN IN
-                        </Button>
-                        <Text textAlign="center"> OR </Text>
-
-                        <a href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?response_type=code&scope=email%20profile&openid.realm&prompt=select_account&redirect_uri=storagerelay%3A%2F%2Fhttps%2Fwww.farfetch.com%3Fid%3Dauth37228&client_id=280941613475-9d1nlgbhfe18sgv731r2ccrsqt0r3cvj.apps.googleusercontent.com&ss_domain=https%3A%2F%2Fwww.farfetch.com&gsiwebsdk=2&access_type=offline&service=lso&o2v=1&flowName=GeneralOAuthFlow">
-                          <Button w="83%" h="30px" ml="20px">
-                            Countinue With Google
-                          </Button>
-                        </a>
-
-                        <a href="https://appleid.apple.com/auth/authorize?client_id=com.farfetch.discover.ffid.service&redirect_uri=https%3A%2F%2Fwww.farfetch.com%2Fsignin-apple&response_type=code%20id_token&scope=name%20email&response_mode=web_message&frame_id=2e06513d-c150-465b-b5a4-74d2c47382db&m=11&v=1.5.4">
-                          <Button w="83%" h="30px" mt="20px" ml="20px">
-                            Countinue With Apple id
-                          </Button>
-                        </a>
-
-                        <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=418944141479017&kid_directed_site=0&app_id=418944141479017&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv11.0%2Fdialog%2Foauth%3Fclient_id%3D418944141479017%26redirect_uri%3Dhttps%253A%252F%252Fwww.farfetch.com%252Flogin-slice%252Fauth%252Fsocial%252Fsignin-facebook%26state%3D%257B%2522key%2522%253A%2522a855e311-c785-475f-a548-c8656d318b59%2522%252C%2522value%2522%253A%25225a22b884-5973-4ed6-a767-559aecef128b%2522%252C%2522moveFromBagToWishlist%2522%253Afalse%252C%2522returnUrl%2522%253A%2522https%253A%252F%252Fwww.farfetch.com%252Fin%252Fshopping%252Fwomen%252Fitems.aspx%2522%257D%26response_type%3Dcode%26scope%3Dpublic_profile%2Bemail%26display%3Dpopup%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Dd7ada773-7c50-4f08-a68f-ac238762ad5d%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fwww.farfetch.com%2Flogin-slice%2Fauth%2Fsocial%2Fsignin-facebook%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%2522key%2522%253A%2522a855e311-c785-475f-a548-c8656d318b59%2522%252C%2522value%2522%253A%25225a22b884-5973-4ed6-a767-559aecef128b%2522%252C%2522moveFromBagToWishlist%2522%253Afalse%252C%2522returnUrl%2522%253A%2522https%253A%252F%252Fwww.farfetch.com%252Fin%252Fshopping%252Fwomen%252Fitems.aspx%2522%257D%23_%3D_&display=popup&locale=kn_IN&pl_dbl=0">
-                          <Button mt="20px" w="83%" h="30px" ml="20px">
-                            Countinue With Facebook
-                          </Button>{" "}
-                        </a>
-                      </TabPanel>
-                    </TabPanels>
-                  </Tabs>
-                </ModalBody>
-              </ModalContent>
-            </Modal>
-          </Link>
           <Link to="/Mens">
             <Image
               src="https://img.icons8.com/material-sharp/2x/loading-heart.gif"
@@ -282,6 +262,9 @@ function PageLink() {
               mt="20px"
             />
           </Link>
+
+          {/* cart,bag */}
+
           <Link to="/Mens">
             <Image
               src="https://img.icons8.com/color/2x/shopaholic.png"
@@ -292,7 +275,7 @@ function PageLink() {
           </Link>
         </div>
       </div>
-      <Category />
+      <Category search={magic} />
     </div>
   );
 }
