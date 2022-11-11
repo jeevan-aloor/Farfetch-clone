@@ -13,7 +13,7 @@ import {
 import { useState } from "react";
 import { Search2Icon } from "@chakra-ui/icons";
 const s = (
-  <Box border="1px solid red" w={1430} h="400px" bg="#FFFFFF">
+  <Box w={1430} h="400px" bg="#FFFFFF">
     <Flex direction="row" gap="50px" justifyContent="space-around">
       <Box lineHeight="20px">
         22% OFF
@@ -93,34 +93,45 @@ const s = (
   </Box>
 );
 
-export default function Category() {
+export default function Category({ search }) {
   const [h, seth] = useState(s);
 
   return (
     <div className="hover">
-      <Tooltip pointer="none" label={h} aria-label="A tooltip">
-        Hover me
-      </Tooltip>
-      <Tooltip label={h} aria-label="A tooltip">
-        Hover me
-      </Tooltip>
-      <Tooltip label={h} aria-label="A tooltip">
-        Hover me
-      </Tooltip>
-      <Tooltip label={h} aria-label="A tooltip">
-        Hover me
-      </Tooltip>
-      <Tooltip label={h} aria-label="A tooltip">
-        Hover me
-      </Tooltip>
-      <Tooltip label={h} aria-label="A tooltip">
-        Hover me
-      </Tooltip>
+      <div className="subhover" style={{ width: "700px" }}>
+        <Tooltip pointer="none" label={h} aria-label="A tooltip">
+          22% Off
+        </Tooltip>
+        <Tooltip label={h} aria-label="A tooltip">
+          Gifts
+        </Tooltip>
+        <Tooltip label={h} aria-label="A tooltip">
+          new in
+        </Tooltip>
+        <Tooltip label={h} aria-label="A tooltip">
+          Brands
+        </Tooltip>
+        <Tooltip label={h} aria-label="A tooltip">
+          Clothing
+        </Tooltip>
+        <Tooltip label={h} aria-label="A tooltip">
+          Shoes
+        </Tooltip>
+        <Tooltip label={h} aria-label="A tooltip">
+          bags
+        </Tooltip>
+        <Tooltip label={h} aria-label="A tooltip">
+          Accessories
+        </Tooltip>
+      </div>
+
       <Box>
-        <InputGroup>
-          <Input w="200px" h="30px" />
-          <InputLeftElement children={<Search2Icon ml="180px" mt="10px" />} />
-        </InputGroup>
+        {search && (
+          <InputGroup>
+            <Input w="200px" h="30px" />
+            <InputLeftElement children={<Search2Icon ml="180px" mt="10px" />} />
+          </InputGroup>
+        )}
       </Box>
     </div>
   );
