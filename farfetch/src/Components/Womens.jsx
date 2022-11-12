@@ -1,21 +1,65 @@
 import React from "react";
-import { Grid, Box, Image, Text, Button, Flex } from "@chakra-ui/react";
+import {
+  Grid,
+  Box,
+  Image,
+  RadioGroup,
+  Stack,
+  Checkbox,
+  Radio,
+  Alert,
+  AlertIcon,
+  Text,
+  Button,
+  Flex,
+  Input,
+} from "@chakra-ui/react";
 import { QuestionOutlineIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 import style from "./main.css";
+import Footer from "./footer";
 
 export default function Womens() {
   const [load, setLoad] = useState(false);
+  const [value, setValue] = useState("1");
+  const [alertmsg, setAlert] = useState(false);
 
   const loadClick = () => {
     setLoad(true);
 
     setTimeout(() => {
       setLoad(false);
+      setAlert(true);
     }, 4000);
+
+    setTimeout(() => {
+      setAlert(false);
+    }, 8000);
   };
   return (
     <div style={{ color: "#222" }}>
+      {alertmsg && (
+        <Alert
+          // m="auto"
+          // h="30px"
+          // borderRadius="10px"
+          // w="380px"
+          // color="yellow"
+          // bg="#4A5568"
+          // fontStyle=""
+          status="error"
+        >
+          <AlertIcon
+          // ml="10px"
+          // w="20px"
+          // h="20px"
+          // mr="10px"
+          // borderRadius="50%"
+          // bg="red"
+          />
+          There is no shopping option its processing
+        </Alert>
+      )}
       <Grid
         templateColumns="repeat(2, 1fr)"
         templateRows="repeat(2, 700px)"
@@ -62,7 +106,7 @@ export default function Womens() {
             colorScheme="#FFFFFF"
             fontSize={15}
           >
-            Shop Now{" "}
+            Shop Now
           </Button>
         </Box>
         <Box>
@@ -123,7 +167,7 @@ export default function Womens() {
             src="https://img.icons8.com/material-outlined/2x/loading-heart.png"
             alt="heart"
             w="30px"
-            ml="280px"
+            ml="260px"
           />
         </Box>
 
@@ -132,7 +176,7 @@ export default function Womens() {
             src="https://img.icons8.com/material-outlined/2x/loading-heart.png"
             alt="heart"
             w="30px"
-            ml="280px"
+            ml="260px"
           />
         </Box>
         <Box id="j3">
@@ -140,7 +184,7 @@ export default function Womens() {
             src="https://img.icons8.com/material-outlined/2x/loading-heart.png"
             alt="heart"
             w="30px"
-            ml="280px"
+            ml="260px"
           />
         </Box>
         <Box id="j4">
@@ -148,7 +192,7 @@ export default function Womens() {
             src="https://img.icons8.com/material-outlined/2x/loading-heart.png"
             alt="heart"
             w="30px"
-            ml="280px"
+            ml="260px"
           />
         </Box>
       </Grid>
@@ -227,7 +271,7 @@ export default function Womens() {
           <Text>FINE JEWELRY & WATCHES</Text>
         </Box>
       </Grid>
-      <Text mt="100px" textAlign="left" ml="70px" fontSize="25px">
+      <Text mt="100px" textAlign="left" ml="70px" fontSize="25px" mb="30px">
         Discover: trending gifts
       </Text>
       <Grid
@@ -242,7 +286,7 @@ export default function Womens() {
             src="https://img.icons8.com/material-outlined/2x/loading-heart.png"
             alt="heart"
             w="30px"
-            ml="280px"
+            ml="260px"
           />
         </Box>
 
@@ -251,7 +295,7 @@ export default function Womens() {
             src="https://img.icons8.com/material-outlined/2x/loading-heart.png"
             alt="heart"
             w="30px"
-            ml="280px"
+            ml="260px"
           />
         </Box>
         <Box id="j7">
@@ -259,7 +303,7 @@ export default function Womens() {
             src="https://img.icons8.com/material-outlined/2x/loading-heart.png"
             alt="heart"
             w="30px"
-            ml="280px"
+            ml="260px"
           />
         </Box>
         <Box id="j8">
@@ -267,7 +311,7 @@ export default function Womens() {
             src="https://img.icons8.com/material-outlined/2x/loading-heart.png"
             alt="heart"
             w="30px"
-            ml="280px"
+            ml="260px"
           />
         </Box>
       </Grid>
@@ -304,7 +348,7 @@ export default function Womens() {
         <Text>$646</Text>
         <Text>$645</Text>
       </Flex>
-      <Text fontSize="30px" mt="50px">
+      <Text fontSize="30px" mt="50px" mb="30px">
         {" "}
         Shop gifts by Brand
       </Text>
@@ -358,24 +402,68 @@ export default function Womens() {
         mt="150px"
         gap="30px"
       >
-        <Box border="1px solid red">
+        <Box boxShadow=" rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" pt="30px">
           {" "}
           <QuestionOutlineIcon w="40px" />
           <Text>How to shop</Text>
           <Text>Your Guide to shopping and placing orders</Text>{" "}
         </Box>
-        <Box border="1px solid red">
+        <Box boxShadow=" rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" pt="30px">
           <QuestionOutlineIcon />
           <Text>FAQS</Text>
           <Text>Your Question and answer</Text>{" "}
         </Box>
 
-        <Box border="1px solid red">
+        <Box boxShadow=" rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" pt="30px">
           <QuestionOutlineIcon />
           <Text>NEED HELP ?</Text>
           <Text>Contact our global Customers Servie team</Text>{" "}
         </Box>
       </Grid>
+      <Text fontSize="30px" color="blackAlpha" mt="40px">
+        GET 10% OFF YOUR FIRST ORDER
+      </Text>
+      <Text w="450px" fontSize="18px" textAlign="center" m="auto">
+        Sign up for promotions, tailored new arrivals, stock updates and more –
+        straight to your inbox
+      </Text>
+      <Text>GET UPDATES BY</Text>
+      <Checkbox defaultChecked mb="20px">
+        Email
+      </Checkbox>
+      <br />
+      <Input
+        placeholder="Your email address"
+        w="300px"
+        h="30px"
+        border="1px solid black"
+        borderRadius="10px"
+      />
+      <br />
+      <Checkbox mb="20px">SMS</Checkbox>
+      <br />
+      <Button
+        w="330px"
+        h="35px"
+        bg="black"
+        border="1px solid black"
+        borderRadius="10px"
+        color="white"
+        fontSize="18px"
+      >
+        Sign up
+      </Button>
+      <Text w="500px" m="auto" mt="20px">
+        By signing up, you agree to our{" "}
+        <a
+          style={{ color: "black" }}
+          href="https://www.farfetch.com/in/privacy-policy/"
+        >
+          Privacy Policy.
+        </a>{" "}
+        Unsubscribe anytime at the bottom of our emails
+      </Text>
+      <Footer />
     </div>
   );
 }

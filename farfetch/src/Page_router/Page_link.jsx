@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import React from "react";
 import { useState, useRef } from "react";
 import style from "./link.css";
@@ -33,6 +33,7 @@ import {
   TabPanels,
   TabPanel,
   textDecoration,
+  Box,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import Category from "./category";
@@ -43,12 +44,16 @@ function PageLink() {
   const [bord, setBord] = useState(true);
   const [scrollBehavior, setScrollBehavior] = useState("inside");
   const [magic, setMagic] = useState(true);
+  const [display, setDisplay] = useState(false);
+  const [name, setName] = useState("");
+  const [adminemail, setAdminEmaildisplay] = useState("");
+  const [adminemailcheck, setAdminEmaildisplaycheck] = useState(false);
 
   const magicset = () => {
     setMagic(false);
     setTimeout(() => {
       setMagic(true);
-    }, 3000);
+    }, 10000);
   };
   console.log("mGI", magic);
 
@@ -68,14 +73,15 @@ function PageLink() {
       <div className="main">
         {/* women,mens,kids */}
 
-        <div className="navigate">
+        <div className="navigate" style={{ paddingTop: "20px" }}>
           <Link className="a" to="/">
-            <h3>Womens</h3>
+            <Text mr="-50px">womens</Text>
           </Link>
-          <Link className="a" to="/Mens">
+          <Link className="a" ml="-200px" to="/Mens">
             <h3>Mens</h3>
           </Link>
           <Link
+            className="a"
             style={{
               marginLeft: "-30px",
               textDecoration: "none",
@@ -100,12 +106,12 @@ function PageLink() {
           <Link to="/">
             <Menu closeOnSelect={false}>
               <MenuButton
-                as={Button}
-                colorScheme="blue"
-                border="none"
-                mt="15"
-                borderRadius="10%"
-                // border="1px solid red"
+                // as={Button}
+                // colorScheme="blue"
+                // border="none"
+                // mt="15"
+                // borderRadius="10%"
+
                 onClick={magicset}
               >
                 <Image
@@ -114,6 +120,7 @@ function PageLink() {
                   w={30}
                 />
               </MenuButton>
+
               <MenuList
                 minWidth="240px"
                 border="1px solid red"
@@ -143,11 +150,10 @@ function PageLink() {
                       />
                       <InputLeftElement
                         pointerEvents="end"
-                        children={
-                          <SearchIcon color="gray.300" ml="290px" mt="10px" />
-                        }
+                        children={<SearchIcon color="gray.300" ml="530px" />}
                       />
                     </InputGroup>
+
                     <MenuItemOption
                       mt="20px"
                       ml="20px"
@@ -247,10 +253,40 @@ function PageLink() {
               </MenuList>
             </Menu>
           </Link>
+          {display && <Text>{name}</Text>}
+          {adminemailcheck && <Text>{adminemail}</Text>}
+          {adminemailcheck && (
+            <Button
+              onClick={() => {
+                setAdminEmaildisplaycheck(false);
+                window.location.reload();
+                return <Navigate to="/" />;
+              }}
+            >
+              LOGOUT
+            </Button>
+          )}
+
+          {display && (
+            <Button
+              onClick={() => {
+                setDisplay(false);
+                window.location.reload();
+              }}
+            >
+              LOGOUT
+            </Button>
+          )}
 
           {/* login */}
-          <Login/>
-          
+          <Login
+            setDisplay={setDisplay}
+            setName={setName}
+            name={name}
+            setAdminEmail={setAdminEmaildisplay}
+            adminemail={adminemail}
+            setAdminEmaildisplaycheck={setAdminEmaildisplaycheck}
+          />
 
           {/* like,heart */}
 
@@ -259,7 +295,8 @@ function PageLink() {
               src="https://img.icons8.com/material-sharp/2x/loading-heart.gif"
               alt="heart"
               w="25px"
-              mt="20px"
+              mt="5px"
+              h="30px"
             />
           </Link>
 
@@ -270,7 +307,7 @@ function PageLink() {
               src="https://img.icons8.com/color/2x/shopaholic.png"
               alt="bag"
               w="30px"
-              mt="18px"
+              mt="5px"
             />
           </Link>
         </div>
