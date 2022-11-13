@@ -1,8 +1,17 @@
 import React from "react";
-import { Box, Flex, Text, Image } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Text,
+  Image,
+  useDisclosure,
+  Slide,
+  Button,
+} from "@chakra-ui/react";
 import {} from "@chakra-ui/icons";
 
 function Footer() {
+  const { isOpen, isClosable, onToggle } = useDisclosure();
   return (
     <Box
       w="100%"

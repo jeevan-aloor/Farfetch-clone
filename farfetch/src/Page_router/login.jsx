@@ -14,6 +14,7 @@ import {
   MenuList,
   MenuOptionGroup,
   TabList,
+  Progress,
   Alert,
   AlertIcon,
   PinInputField,
@@ -77,7 +78,7 @@ export default function Login({
   const [loginpassword, setLoginpassword] = useState("");
 
   const [adminpassword, setAdminPassword] = useState("");
-  const [otpload,setotpload]=useState(false)
+  const [otpload, setotpload] = useState(false);
 
   const [error, setError] = useState(false);
   const [admincheck, setAdminCheck] = useState(false);
@@ -91,6 +92,7 @@ export default function Login({
   const [show, setShow] = useState(false);
   const [move, setMove] = useState(false);
   const handleClick = () => setShow(!show);
+
   const bordChange = () => {
     setBord(2);
   };
@@ -197,7 +199,7 @@ export default function Login({
 
   return (
     <div>
-      <Link to="/">
+      <Link>
         <Button onClick={onOpen} bg="#FFFFFF">
           <Avatar bg="teal.500" w="30px" h="30px" border="none" />
         </Button>
@@ -273,25 +275,36 @@ export default function Login({
                     >
                       Back to sign in
                     </Button>
-                    {otpnumber &&
-                    <>
-                    <Text fontSize="20px" mt="30px" textDecoration="underline">Please enter otp</Text>
-                    <PinInput otp >
-                      <PinInputField />
-                      <PinInputField />
-                      <PinInputField />
-                      <PinInputField />
-                    </PinInput ><br/>
-                    <Button m="20px" isLoading={otpload} onClick={()=>{
-                      setotpload(true)
-                      setTimeout(()=>{
-                        setotpload(false)
-
-                      },3000)
-                      
-
-                    }}>SUBMIT</Button>
-                    </>}
+                    {otpnumber && (
+                      <>
+                        <Text
+                          fontSize="20px"
+                          mt="30px"
+                          textDecoration="underline"
+                        >
+                          Please enter otp
+                        </Text>
+                        <PinInput otp>
+                          <PinInputField />
+                          <PinInputField />
+                          <PinInputField />
+                          <PinInputField />
+                        </PinInput>
+                        <br />
+                        <Button
+                          m="20px"
+                          isLoading={otpload}
+                          onClick={() => {
+                            setotpload(true);
+                            setTimeout(() => {
+                              setotpload(false);
+                            }, 3000);
+                          }}
+                        >
+                          SUBMIT
+                        </Button>
+                      </>
+                    )}
                   </Box>
                 )}
                 {!forgot && (
@@ -350,7 +363,6 @@ export default function Login({
                             h="35px"
                             w="80%"
                             ref={initialRef}
-                            border="1px solid black"
                             borderRadius="10px"
                             mb="20px"
                             onChange={loginemailOnchange}
@@ -367,7 +379,6 @@ export default function Login({
                               w="80%"
                               ml="20px"
                               type={show ? "text" : "password"}
-                              border="1px solid black"
                               borderRadius="10px"
                               mb="10px"
                               onChange={loginpasswordOnchange}
@@ -376,7 +387,6 @@ export default function Login({
                               <Button
                                 h="1.75rem"
                                 size="sm"
-                                border="1px solid black"
                                 bg={!show ? "#FEFCBF" : "#E53E3E"}
                                 borderRadius="10px"
                                 onClick={handleClick}
@@ -418,7 +428,6 @@ export default function Login({
                           w="83%"
                           ml="20px"
                           mt={10}
-                          border="1px solid black"
                           borderRadius="10px"
                           h="38px"
                           onClick={checkLogin}
@@ -437,7 +446,6 @@ export default function Login({
                             m="auto"
                             w="80%"
                             ml="20px"
-                            border="1px solid black"
                             borderRadius="10px"
                             color="black"
                             fontSize="15px"
@@ -458,7 +466,6 @@ export default function Login({
                             m="auto"
                             w="80%"
                             ml="20px"
-                            border="1px solid black"
                             borderRadius="10px"
                             color="black"
                             fontSize="15px"
@@ -479,7 +486,6 @@ export default function Login({
                             m="auto"
                             w="80%"
                             ml="20px"
-                            border="1px solid black"
                             borderRadius="10px"
                             color="black"
                             fontSize="15px"
@@ -503,7 +509,6 @@ export default function Login({
                                 h="35px"
                                 w="80%"
                                 ref={initialRef}
-                                border="1px solid black"
                                 borderRadius="10px"
                                 mb="20px"
                                 onChange={username}
@@ -532,7 +537,6 @@ export default function Login({
                                 h="35px"
                                 w="80%"
                                 ref={initialRef}
-                                border="1px solid black"
                                 borderRadius="10px"
                                 mb="20px"
                                 onChange={useremail}
@@ -561,7 +565,6 @@ export default function Login({
                                 m="auto"
                                 w="80%"
                                 ml="20px"
-                                border="1px solid black"
                                 borderRadius="10px"
                                 mb="10px"
                                 onChange={userpassword}
@@ -582,7 +585,6 @@ export default function Login({
                                 <Button
                                   h="1.75rem"
                                   size="sm"
-                                  border="1px solid black"
                                   bg={!show ? "#FEFCBF" : "#E53E3E"}
                                   borderRadius="10px"
                                   onClick={handleClick}
@@ -612,13 +614,13 @@ export default function Login({
                           w="83%"
                           ml="20px"
                           mt={10}
-                          border="1px solid black"
                           borderRadius="10px"
                           h="38px"
                           onClick={userRegister}
                         >
                           REGISTER
                         </Button>
+                        {load && <Progress size="xs" isIndeterminate />}
 
                         <Text textAlign="center"> OR </Text>
 
@@ -631,7 +633,6 @@ export default function Login({
                             m="auto"
                             w="80%"
                             ml="20px"
-                            border="1px solid black"
                             borderRadius="10px"
                             color="black"
                             fontSize="15px"
@@ -652,7 +653,6 @@ export default function Login({
                             m="auto"
                             w="80%"
                             ml="20px"
-                            border="1px solid black"
                             borderRadius="10px"
                             color="black"
                             fontSize="15px"
@@ -673,7 +673,6 @@ export default function Login({
                             m="auto"
                             w="80%"
                             ml="20px"
-                            border="1px solid black"
                             borderRadius="10px"
                             color="black"
                             fontSize="15px"
@@ -702,7 +701,6 @@ export default function Login({
                             h="35px"
                             w="80%"
                             ref={initialRef}
-                            border="1px solid black"
                             borderRadius="10px"
                             mb="20px"
                             onChange={adminemailonchange}
@@ -719,7 +717,6 @@ export default function Login({
                               w="80%"
                               ml="20px"
                               type={show ? "text" : "password"}
-                              border="1px solid black"
                               borderRadius="10px"
                               mb="10px"
                               onChange={adminpasswordonchange}
@@ -728,7 +725,6 @@ export default function Login({
                               <Button
                                 h="1.75rem"
                                 size="sm"
-                                border="1px solid black"
                                 bg={!show ? "#FEFCBF" : "#E53E3E"}
                                 borderRadius="10px"
                                 onClick={handleClick}
@@ -763,7 +759,6 @@ export default function Login({
                           w="83%"
                           ml="20px"
                           mt={10}
-                          border="1px solid black"
                           borderRadius="10px"
                           h="38px"
                           onClick={adminHandle}

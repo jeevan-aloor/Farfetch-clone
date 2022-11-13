@@ -10,6 +10,7 @@ import {
   Alert,
   AlertIcon,
   Text,
+  Spinner,
   Button,
   Flex,
   Input,
@@ -23,6 +24,17 @@ export default function Mens() {
   const [load, setLoad] = useState(false);
   const [value, setValue] = useState("1");
   const [alertmsg, setAlert] = useState(false);
+  const [loadingmen, setLoadingMen] = useState(true);
+
+  const loading=()=>{
+    setTimeout(()=>{
+      setLoadingMen(false)
+
+    },3000)
+    
+
+  }
+  loading()
 
   const loadClick = () => {
     setLoad(true);
@@ -39,6 +51,20 @@ export default function Mens() {
       setAlert(false);
     }, 8000);
   };
+  if(loadingmen){
+    return (
+      <Box>
+        <Spinner mt="200px"
+  thickness='5px'
+  speed='0.65s'
+  emptyColor='gray.200'
+  color='blue.500'
+  size='xl'
+/>
+
+      </Box>
+    )
+  }
   return (
     <div style={{ color: "#222" }}>
        {alertmsg && (
@@ -63,6 +89,7 @@ export default function Mens() {
               There is no shopping option its processing
             </Alert>
           )}
+
       <Grid
         templateColumns="repeat(2, 1fr)"
         templateRows="repeat(2, 700px)"

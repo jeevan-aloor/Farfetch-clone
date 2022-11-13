@@ -39,6 +39,7 @@
     display: flex;
     flex-direction: row;
     gap: 200px;
+    /* border: 1px solid red; */
     
 
 }
@@ -91,4 +92,9 @@
 
 }
 
-@media
+@media screen and (min-width: 500px) and (max-width:1000px) {
+    .main{
+        border: 1px solid red;
+        width:100%
+    }
+}

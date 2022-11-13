@@ -61,7 +61,7 @@ export default function Womens() {
         </Alert>
       )}
       <Grid
-        templateColumns="repeat(2, 1fr)"
+        templateColumns="repeat(2,1fr)"
         templateRows="repeat(2, 700px)"
         w="100%"
         h="2000px"

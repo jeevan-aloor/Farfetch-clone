@@ -18,6 +18,7 @@ import {
   FormControl,
   Input,
   InputGroup,
+  Tag,
   ModalOverlay,
   InputLeftElement,
   useDisclosure,
@@ -75,7 +76,7 @@ function PageLink() {
 
         <div className="navigate" style={{ paddingTop: "20px" }}>
           <Link className="a" to="/">
-            <Text mr="-50px">womens</Text>
+            <Text mr="-50px"  _hover={{ backgroundColor:"#F0FFF4"}}>womens</Text>
           </Link>
           <Link className="a" ml="-200px" to="/Mens">
             <h3>Mens</h3>
@@ -89,9 +90,9 @@ function PageLink() {
             }}
             to="/Kids"
           >
-            <h3>Kids</h3>
+            <h3  _hover={{ backgroundColor:"#F0FFF4"}}>Kids</h3>
           </Link>
-          <Link to="/Logo" style={{ textDecoration: "none" }}>
+          <Link to="/" style={{ textDecoration: "none" }}>
             <h1 style={{ fill: "#222", color: "black", fontSize: "1.9rem" }}>
               FARFETCH
             </h1>
@@ -103,7 +104,7 @@ function PageLink() {
         {/* falg */}
 
         <div>
-          <Link to="/">
+          <Link>
             <Menu closeOnSelect={false}>
               <MenuButton
                 // as={Button}
@@ -123,11 +124,11 @@ function PageLink() {
 
               <MenuList
                 minWidth="240px"
-                border="1px solid red"
                 w="350px"
                 h="500px"
                 bg="#FFFFFF"
                 color="black"
+                boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
               >
                 <MenuOptionGroup
                   defaultValue="asc"
@@ -253,7 +254,11 @@ function PageLink() {
               </MenuList>
             </Menu>
           </Link>
-          {display && <Text>{name}</Text>}
+          {display && (
+            <Tag w="50px" h="30px">
+              {name}
+            </Tag>
+          )}
           {adminemailcheck && <Text>{adminemail}</Text>}
           {adminemailcheck && (
             <Button

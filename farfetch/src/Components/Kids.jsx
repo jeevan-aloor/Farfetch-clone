@@ -80,7 +80,7 @@ export default function Kids() {
             mt="150px"
             fontWeight="bold"
           >
-            22% off your new wardrobe
+            DANCEFLOOR READY : THE HOTTEST PARTY SHOES
           </Text>
           <Text ml="80px" w="600px" fontSize="25px">
             For a limited time only, you can shop the world’s most iconic brands
