@@ -1,10 +1,12 @@
 THIS PAGE WAS MADE AS A PERSONAL EDUCATIONAL PROJECT. This is NOT the official site of the company or brand identified on the page. The creator of this page is NOT affiliated with the company or brand in any way. This page is a personal project made in connection with an educational exercise.
 
-# FARFETCH  
+# 💫 FARFETCH 💫  
 
 
 
-## e-commerce website
+## Farfetch website is Basically Ecommerce website and here we can buy laxuary item like shoes,cloths,daimond,jewelleries
+
+## Individual project
 
 ## im used to make this website
 
@@ -14,13 +16,17 @@ THIS PAGE WAS MADE AS A PERSONAL EDUCATIONAL PROJECT. This is NOT the official s
 -  HTML 
 -  CSS
 
+### Netlify link - https://effulgent-biscotti-06a6fc.netlify.app
 
-![farfetch](https://lh3.googleusercontent.com/J3bSdde0I7SdXnjAkzZ11SpQAajMnXdBg0_2dJp0dM0YITSuWF0V-vctFNk3loK19KvdxvLu_hv6G2OtvuIVqoWn7nxjh5n1KGyEzZkm9UDvsC_2lnw-qHe4wlebchG2egLspEBpcH5NI5dfe990ErvpDGtKvumDOQch8sUNXUJUqs5n5QHSc52YYsrv1mOvvho6q4R_enN1kiWDu17R12NVJrCHQLGigKHgWusXEpJv12hBkr3Pi16PGkP8UoHadMRFMFte1ki4u8_St9QUa2VH-kEGUHXuruINSnsP27JpzjG-rxpPSTWaOZHbQ11YcPTmIoY9t7FCuVzLq4ZyGbH6v_SsAqmkqevlv3ex_n6vDoo3rDRHFeo8if9f_Dc7PfwFAt01GeDDrZoErGzZTfXu8_X6NvTh_uV6Vz2QPPVrCIB6_crFT3LFOGDzL8MLGSbdeArQbsFnDiYtK76gxqzZc3Dko9dMTvxiRQps1Tm-aRWkCfA-rHrjGrNgOhnzff3cKnIs-P2sSn6lr3CjYAZEuC1mJ3LYfCz8NwInTOYqWmajL4_bLRfUONz5ONiZdn12mIfCs7PDeg0wnUEcyjtcQ7YhL1p_oJ_f3E7eJcJQRcBLZq3JYZ9glivaI5Z4dm7FjHaUJ8k-ZYbpvA5RhXPHgJGuqmu8-jxjefAu4FI6FNzGYfFsVFEuP_QGuygFzvhbynSBhwT5Wayo9ZKJXaygNgP8FBEnoFA0lBiwuTkNDvibJHd7Zpw8ZPGZFjrR0cPEONhv5Ax-Bbg5SvxVSZjndiH6AF2TjSeNS0t08DYLcLs1wiZ17uVNS29m68gNA3dcv6LC0AQPShTqWiU7czxgabjdVFmgoN6W-8rLtSuhbyb4h0TsqNna7ZcC6Zqg-ZkMcMdnNPzt-sd2X0D2GVuXp61PqJkndsYjQYA7_8BjZNHYlw=w1314-h821-no?authuser=0)
+## Features 
+- Used to build this website react,javascript,chakraUi,html,css
+- For data base purpose Used Local storage to store and retrive the data
+- Login And signup are fully worked and have validation
+- Women page,mens page,kids page and login and signup page
 
-![](https://lh3.googleusercontent.com/KHh7p3C-eSA2Vp2tyOEbBMpV4zpMH566rVlsEaVs2jwDqhEEj23vKPxcdpoS9p84A11h2F2h2d6VuJmB0-ncIJo0P5eyvfj3fXTxJur140RcCmwJX7k_cQVr6xkURGU8I97hlecfjD0H4PSC6POyok7Vz0-kcCdqnpNpH_aPZ367HpyDfet7KYgDxIfAjESgggDAGnB4Pzp8fcB4ztZ_F2JKH9LRjHTH-uYqzy0fhoCCwh62LsHsNeL6TE5EkDq2GO7NmLtYh79Qo3ggwRdqq1v9smpaj6FgYmK8z4gXqkHttdX4g2-rUgYMNfre0vJkWWh9hYuVbDW5YDOJr19MoVxdBe82QuUp_zB_EN18VwjTO6Syup5NQzBaMXuIK5by106wePlWrqbXOy_f9iHscDCqcFiKguoRrP5aYqrDdX_7BC8QrsUpM0WWLtiRYVLKyOjQ5aOj4onnLCH72Tl-N0C85A7m7tL248nEKYXsLzGECAga6nRiF-udTUF8Oqvt5juHVTG7eHqtLyI-MUOiTWG2XCiytXk0eZxadc9IfNobpmQP1yittr8Dn4-5c9nQJlxYTWyTYjAgcFNYDcNhKX0PATqcC8iizUyyqafmjC94Yfal9F9btzdXE7sb2SPqy2hdzhMY27k2sWg4bb_SwTbKXxSnw13-LLDWa1dX8-eT8zisN0YOjuugiDWzNHnbJOpFIskXJrW6n7i2NCysXyV6OiwZH6B99tlblrI4JlDbaLpzwarzzr7mCgWwm3eOvJhMv-l2Iv53NtdgcZR1nPLPn66KYiyTFZDSkLrkUDPgBhaxH69sGDkxVZM5l37lvjjfW7PFVJn7cll7I5nEg280qr73MkMlmHk89xnOO_9JcKL6WTDq__Bw7LHuLQJWz9m65TFSIZVzNU4eanFmT7E7Ztf6Hycj8nUTjfEkwGYb4wXuPw=w1314-h821-no?authuser=0)
-
-![](https://lh3.googleusercontent.com/XmPUKy-QPynHroFwt9IWUSULjl61ML9O7XjycGq7mcMfWwgt6phsq0OfsltFn6KRH9EctCD1pe8BC30BnvBYbm46pqp78rzUEWq54xqNltPFdVIcHNY_8m45WB6HQwol03wbgHhoo3AaFDkl218dMdpLaTNekiI1XDuTqx59mo7-smuL5jbZqiHwg9tXDswT0e9_h9CJy54Bqlj6ogOj09k93VBT_BfeVPeNxOcNXoUAvtoAz-4cgXXvayrRpmXf8mAQSzr7Sm-VKLX_6OanUTUSgRXTpKw8m28PaT-oy0ZFpPaxYlLQcpVvwGxQcmWEr8tcwfIjp2oCBzFjA2MAQHP1qR_hHii2-d64IyreO57qKCwpynM9lJ0iti0XETvFMKQ4i1HgU0f6r8gQltdrKFXx4JgZasXzFJxK4JAAKNvi8v2k3XI-8JkxzqOMj-cGrqbybF0q2rrQWrHHnLhMz7YmQOt8vMy_ROvfj_KHIqvHYjt-_GHbd1Hba3QwIWYm_BbqOF8MP7WvBP0zR2hDLg2YDs8N6aaZlcEVoUJW00n-ni2AtLii1k5EfwmfaNFsX_eZLDLmy47o8Ohh9dYGl5Rpu2L4NhOv4G7AduxMfSnsjteVkk6RAixrPu6fwFCcJbiTwj6wOe2dV3MtARbHLeDFRPPeAivf6I82x-TuE-NHM2u_lYFDvhtgOvalIqZpW2408B7-Fg15AgrUy2MdmpR9Sj4dLsRS0XeAZbuwdOEzskaB5yqEQgU9WoWNb_sWpCDVPI21j4s2XL0zple9gsZxC7AAbQEXjxXiJdllkZkICUokBZGO701mOrY0oIRYIGL7tB2Jz_YEZWuyQFVg69OG7H5N3aPPi2Uo7zJPDn_AcXUXeEm541LdzPelLdsjyoQOUdussGrnM0fQ6U-g1Z0iBEak-yYBOnqaDWTECHVU49zNrg=w1314-h821-no?authuser=0)
-
+![](https://i.ibb.co/mDnrqQ2/Screen-Shot-2022-12-12-at-8-44-34-PM.png)
+![](https://i.ibb.co/CWGs7HX/Screen-Shot-2022-12-12-at-8-44-43-PM.png)
+![](https://i.ibb.co/bFxV82m/Screen-Shot-2022-12-12-at-8-44-50-PM.png)
 
 
 
